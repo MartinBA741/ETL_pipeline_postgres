@@ -10,7 +10,7 @@ songplay_table_create = ("""
     CREATE TABLE IF NOT EXISTS songplays
     (
         songplay_id BIGSERIAL PRIMARY KEY, 
-        start_time TIMESTAMP REFERENCES time(start_time), 
+        start_time TIMESTAMP REFERENCES time(start_time),  # REFERENCES is used in fact tables to refer to "child" table where variable is KEY...
         user_id int NOT NULL REFERENCES users(user_id), 
         level text, 
         song_id text REFERENCES songs(song_id), 
